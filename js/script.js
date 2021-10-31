@@ -1,6 +1,7 @@
 let courseInfo
 let currentTee = 0
 let currentCourse = 18300
+let playerCount = 0
 function getAvailableCourses(cb) {
     fetch('https://golf-courses-api.herokuapp.com/courses/')
         .then(response => response.json())
@@ -91,15 +92,6 @@ function render(data) {
 
 function changeTeeBox(box) {
     currentTee = box
-    if (box = 0) {
-        console.log("active")
-        document.getElementById("teeBox").innerHTML = `
-        <a class="btn btn-primary-active" aria-current="page" onclick="changeTeeBox(0)">Pro</a>
-        <a class="btn btn-primary" onclick="changeTeeBox(1)">Champion</a>
-        <a class="btn btn-primary" onclick="changeTeeBox(2)">Men's</a>
-        <a class="btn btn-primary" onclick="changeTeeBox(3)">Women's</a>
-    `
-    }
     console.log(currentTee)
     getCourseInfo(render)
 }
@@ -107,4 +99,30 @@ function changeCourse(courseID) {
     currentCourse = courseID
     console.log(currentCourse)
     getCourseInfo(render)
+}
+
+function addPlayer(name) {
+    playerCount += 1
+    name = document.getElementById('playerName').value
+    playerHTML = ``
+    playerHTML += `<th scope="row" class='col border'>${name}</th>`
+    for (let i = 0; i < 9; i++) {
+        playerHTML += `<td class="col border"><input></td>`
+
+    }
+    playerHTML += `<td class="col border"></td>`
+    for (let i = 9; i < 18; i++) {
+        playerHTML += `<td class="col border"><input></td>`
+
+    }
+    playerHTML += `<td class="col border"></td>
+    <td class="col border"></td>`
+    console.log(playerHTML)
+    document.getElementById(`player${playerCount}`).innerHTML = playerHTML
+    document.getElementById('playerName').value = ''
+}
+
+// addPlayer('jkl;sdaf')
+function rowTotals() {
+
 }

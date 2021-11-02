@@ -1,5 +1,5 @@
 function getScores() {
-    //Player 1
+    //Player1
     if (players[0]) {
         let outScore1 = 0
         let inScore1 = 0
@@ -27,7 +27,6 @@ function getScores() {
         let totalScore1 = outScore1 + inScore1
         document.getElementById('totalScore1').innerText = totalScore1
     }
-
     //Player2
     if (players[1]) {
         let outScore2 = 0
@@ -56,9 +55,7 @@ function getScores() {
         let totalScore2 = outScore2 + inScore2
         document.getElementById('totalScore2').innerText = totalScore2
     }
-
-
-
+    //Player3
     if (players[2]) {
         let outScore3 = 0
         let inScore3 = 0
@@ -86,6 +83,7 @@ function getScores() {
         let totalScore3 = outScore3 + inScore3
         document.getElementById('totalScore3').innerText = totalScore3
     }
+    //Player4
     if (players[3]) {
         let outScore4 = 0
         let inScore4 = 0

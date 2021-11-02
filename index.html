@@ -23,75 +23,58 @@
         <div class="headerFlex"><span class="container-fluid">
                 <span class="navbar-brand mb-0 h1">Golf Score Card</span>
             </span>
+            <span class="btn-group" id="course">
+                <a href="#" class="btn btn-primary" aria-current="page" onclick="changeCourse(18300)">Fox
+                    Hollow</a>
+                <a href="#" class="btn btn-primary" onclick="changeCourse(11819)">Thanksgiving Point</a>
+                <a href="#" class="btn btn-primary" onclick="changeCourse(19002)">Spanish Oaks</a>
+            </span>
             <span class="btn-group" id="teeBox">
                 <a class="btn btn-primary" aria-current="page" onclick="changeTeeBox(0)">Pro</a>
                 <a class="btn btn-primary" onclick="changeTeeBox(1)">Champion</a>
                 <a class="btn btn-primary" onclick="changeTeeBox(2)">Men's</a>
                 <a class="btn btn-primary" onclick="changeTeeBox(3)">Women's</a>
             </span>
-            <span class="btn-group" id="course">
-                <a href="#" class="btn btn-primary" aria-current="page" onclick="changeCourse(18300)">Fox
-                    Hollow</a>
-                <a href="#" class="btn btn-primary" onclick="changeCourse(11819)">Thanksgiving Point</a>
-                <a href="#" class="btn btn-primary" onclick="changeCourse(19002)">Spanish Oaks</a>
-
-            </span>
             <span id="current"></span>
         </div>
     </nav>
-    <!-- <div class="content">
-        <div class="form-group">
-            <label for="course-select">Select Course</label>
-            <select class="form-control" id="course-select"></select>
-        </div> -->
-
-    <table class="table">
-
-        <thead>
-
-            <td class="col border">Hole</td>
-            <td class="col border">1</td>
-            <td class="col border">2</td>
-            <td class="col border">3</td>
-            <td class="col border">4</td>
-            <td class="col border">5</td>
-            <td class="col border">6</td>
-            <td class="col border">7</td>
-            <td class="col border">8</td>
-            <td class="col border">9</td>
-            <td class="col border">Out Score</td>
-            <td class="col border">10</td>
-            <td class="col border">11</td>
-            <td class="col border">12</td>
-            <td class="col border">13</td>
-            <td class="col border">14</td>
-            <td class="col border">15</td>
-            <td class="col border">16</td>
-            <td class="col border">17</td>
-            <td class="col border">18</td>
-            <td class="col border">In Score</td>
-            <td class="col border">Total Score</td>
-
-        </thead>
-        <tbody>
-
-            <tr id="yardage">
-            </tr>
-            <tr id="par">
-            </tr>
-            <tr id="handicap">
-                <th scope="row" class='col border'>Handicap
-                </th>
-            </tr>
-            <tr id="player1"></tr>
-            <tr id="player2"></tr>
-            <tr id="player3"></tr>
-            <tr id="player4"></tr>
-
-
-        </tbody>
-
-    </table>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <td class="col border">Hole</td>
+                <td class="col border">1</td>
+                <td class="col border">2</td>
+                <td class="col border">3</td>
+                <td class="col border">4</td>
+                <td class="col border">5</td>
+                <td class="col border">6</td>
+                <td class="col border">7</td>
+                <td class="col border">8</td>
+                <td class="col border">9</td>
+                <td class="col border">Out Score</td>
+                <td class="col border">10</td>
+                <td class="col border">11</td>
+                <td class="col border">12</td>
+                <td class="col border">13</td>
+                <td class="col border">14</td>
+                <td class="col border">15</td>
+                <td class="col border">16</td>
+                <td class="col border">17</td>
+                <td class="col border">18</td>
+                <td class="col border">In Score</td>
+                <td class="col border">Total Score</td>
+            </thead>
+            <tbody>
+                <tr id="yardage"></tr>
+                <tr id="par"></tr>
+                <tr id="handicap"></tr>
+                <tr id="player1"></tr>
+                <tr id="player2"></tr>
+                <tr id="player3"></tr>
+                <tr id="player4"></tr>
+            </tbody>
+        </table>
+    </div>
     <div class="input-group mb-3">
         <button class="input-group-text" id="inputGroup-sizing-default" onclick="addPlayer()">Add Player</button>
         <input type="text" class="form-control" aria-label="Sizing example input"

@@ -1,9 +1,7 @@
-let courseInfo
 let currentTee = 0
 let currentCourse = 18300
 let playerCount = 0
 let players = []
-let courseName
 class Player {
     constructor(name, scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) {
         this.name = name;
@@ -22,14 +20,6 @@ function getCourseInfo(cb) {
         .then(data => cb(data));
 }
 getCourseInfo(render)
-function displayCourseInfo() {
-    //Yardage
-    let yardageHTML
-    document.getElementById('yardage')
-}
-async function courseVariable(data) {
-    courseInfo = data
-}
 function changeTeeBox(box) {
     currentTee = box
     getCourseInfo(render)

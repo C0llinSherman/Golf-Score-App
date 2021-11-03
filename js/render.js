@@ -1,25 +1,67 @@
 function render(data) {
-    //Current Tee
+    //Current Tee and Current Course
     if (currentCourse == 18300) {
-        courseName = 'Fox Hollow'
+        document.getElementById('course').innerHTML = `<a href="#" class="btn btn-primary active" aria-current="page" onclick="changeCourse(18300)">Fox
+                    Hollow</a>
+                <a href="#" class="btn btn-primary" onclick="changeCourse(11819)">Thanksgiving Point</a>
+                <a href="#" class="btn btn-primary" onclick="changeCourse(19002)">Spanish Oaks</a>`
     }
     else if (currentCourse == 11819) {
-        courseName = 'Thanksgiving Point'
+        document.getElementById('course').innerHTML = `<a href="#" class="btn btn-primary" aria-current="page" onclick="changeCourse(18300)">Fox
+                    Hollow</a>
+                <a href="#" class="btn btn-primary active" onclick="changeCourse(11819)">Thanksgiving Point</a>
+                <a href="#" class="btn btn-primary" onclick="changeCourse(19002)">Spanish Oaks</a>`
     }
     else {
-        courseName = "Spanish Oaks"
+        document.getElementById('course').innerHTML = `<a href="#" class="btn btn-primary" aria-current="page" onclick="changeCourse(18300)">Fox
+                    Hollow</a>
+                <a href="#" class="btn btn-primary" onclick="changeCourse(11819)">Thanksgiving Point</a>
+                <a href="#" class="btn btn-primary active" onclick="changeCourse(19002)">Spanish Oaks</a>`
     }
-    //Current Course
-    if (currentTee == 0) {
-        teeName = 'Pro'
-    } else if (currentTee == 1) {
-        teeName = 'Champion'
-    } else if (currentTee == 2) {
-        teeName = "Men's"
-    } else if (currentTee == 3) {
-        teeName = "Women's"
+    if (currentCourse == 18300 || currentCourse == 11819) {
+        if (currentTee == 0) {
+            document.getElementById('teeBox').innerHTML = `<a class="btn btn-primary active" aria-current="page" onclick="changeTeeBox(0)">Pro</a>
+                <a class="btn btn-primary" onclick="changeTeeBox(1)">Champion</a>
+                <a class="btn btn-primary" onclick="changeTeeBox(2)">Men's</a>
+                <a class="btn btn-primary" onclick="changeTeeBox(3)">Women's</a>`
+        } else if (currentTee == 1) {
+            document.getElementById('teeBox').innerHTML = `<a class="btn btn-primary" aria-current="page" onclick="changeTeeBox(0)">Pro</a>
+        <a class="btn btn-primary active" onclick="changeTeeBox(1)">Champion</a>
+        <a class="btn btn-primary" onclick="changeTeeBox(2)">Men's</a>
+        <a class="btn btn-primary" onclick="changeTeeBox(3)">Women's</a>`
+        } else if (currentTee == 2) {
+            document.getElementById('teeBox').innerHTML = `<a class="btn btn-primary" aria-current="page" onclick="changeTeeBox(0)">Pro</a>
+                <a class="btn btn-primary" onclick="changeTeeBox(1)">Champion</a>
+                <a class="btn btn-primary active" onclick="changeTeeBox(2)">Men's</a>
+                <a class="btn btn-primary" onclick="changeTeeBox(3)">Women's</a>`
+        } else if (currentTee == 3) {
+            document.getElementById('teeBox').innerHTML = `<a class="btn btn-primary" aria-current="page" onclick="changeTeeBox(0)">Pro</a>
+                <a class="btn btn-primary" onclick="changeTeeBox(1)">Champion</a>
+                <a class="btn btn-primary" onclick="changeTeeBox(2)">Men's</a>
+                <a class="btn btn-primary active" onclick="changeTeeBox(3)">Women's</a>`
+        }
     }
-    document.getElementById('current').innerText = "Current Score Card: " + courseName + " " + teeName
+    else {
+        if (currentTee == 3) {
+            currentTee = 0
+        }
+        if (currentTee == 0) {
+            document.getElementById('teeBox').innerHTML = document.getElementById('teeBox').innerHTML = `<a class="btn btn-primary active" aria-current="page" onclick="changeTeeBox(0)">Champion</a>
+            <a class="btn btn-primary" onclick="changeTeeBox(1)">Men's</a>
+            <a class="btn btn-primary" onclick="changeTeeBox(2)">Women's</a>
+            `
+        } else if (currentTee == 1) {
+            document.getElementById('teeBox').innerHTML = document.getElementById('teeBox').innerHTML = `<a class="btn btn-primary" aria-current="page" onclick="changeTeeBox(0)">Champion</a>
+            <a class="btn btn-primary active" onclick="changeTeeBox(1)">Men's</a>
+            <a class="btn btn-primary" onclick="changeTeeBox(2)">Women's</a>
+            `
+        } else if (currentTee == 2) {
+            document.getElementById('teeBox').innerHTML = document.getElementById('teeBox').innerHTML = `<a class="btn btn-primary" aria-current="page" onclick="changeTeeBox(0)">Champion</a>
+            <a class="btn btn-primary" onclick="changeTeeBox(1)">Men's</a>
+            <a class="btn btn-primary active" onclick="changeTeeBox(2)">Women's</a>
+            `
+        }
+    }
     //Yardage
     let yardageHTML = '<th scope="row" class="col border">Yardage</td>'
     let yardageOutScore = 0

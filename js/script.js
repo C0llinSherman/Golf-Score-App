@@ -42,3 +42,4 @@ function validatePlayerCount() {
     }
 }
 addPlayer()
+getScores()

@@ -112,7 +112,3 @@ function getScores() {
         document.getElementById('totalScore4').innerText = totalScore4
     }
 }
-
-
-
-

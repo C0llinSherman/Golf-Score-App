@@ -113,12 +113,12 @@ function render(data) {
         let playerHTML1 = ``
         playerHTML1 += `<th scope="row" class='col border'>${players[0].name}</th>`
         for (let i = 0; i < 9; i++) {
-            playerHTML1 += `<td class="col border"><input id="p1h${i}"></td>`
+            playerHTML1 += `<td class="col border"><input onkeyup="getScores()" id="p1h${i}"></td>`
 
         }
         playerHTML1 += `<td class="col border" id="outScore1"></td>`
         for (let i = 9; i < 18; i++) {
-            playerHTML1 += `<td class="col border"><input id="p1h${i}"></td>`
+            playerHTML1 += `<td class="col border"><input onkeyup="getScores()" id="p1h${i}"></td>`
         }
         playerHTML1 += `<td class="col border" id="inScore1"></td>
     <td class="col border" id="totalScore1"></td>`
@@ -130,12 +130,12 @@ function render(data) {
         let playerHTML2 = ``
         playerHTML2 += `<th scope="row" class='col border'>${players[1].name}</th>`
         for (let i = 0; i < 9; i++) {
-            playerHTML2 += `<td class="col border"><input id="p2h${i}"></td>`
+            playerHTML2 += `<td class="col border"><input onkeyup="getScores()" id="p2h${i}"></td>`
 
         }
         playerHTML2 += `<td class="col border" id="outScore2"></td>`
         for (let i = 9; i < 18; i++) {
-            playerHTML2 += `<td class="col border"><input id="p2h${i}"></td>`
+            playerHTML2 += `<td class="col border"><input onkeyup="getScores()" id="p2h${i}"></td>`
         }
         playerHTML2 += `<td class="col border" id="inScore2"></td>
     <td class="col border" id="totalScore2"></td>`
@@ -147,12 +147,12 @@ function render(data) {
         let playerHTML3 = ``
         playerHTML3 += `<th scope="row" class='col border'>${players[2].name}</th>`
         for (let i = 0; i < 9; i++) {
-            playerHTML3 += `<td class="col border"><input id="p3h${i}"></td>`
+            playerHTML3 += `<td class="col border"><input onkeyup="getScores()" id="p3h${i}"></td>`
 
         }
         playerHTML3 += `<td class="col border" id="outScore3"></td>`
         for (let i = 9; i < 18; i++) {
-            playerHTML3 += `<td class="col border"><input id="p3h${i}"></td>`
+            playerHTML3 += `<td class="col border"><input onkeyup="getScores()" id="p3h${i}"></td>`
         }
         playerHTML3 += `<td class="col border" id="inScore3"></td>
     <td class="col border" id="totalScore3"></td>`
@@ -164,12 +164,12 @@ function render(data) {
         let playerHTML4 = ``
         playerHTML4 += `<th scope="row" class='col border'>${players[3].name}</th>`
         for (let i = 0; i < 9; i++) {
-            playerHTML4 += `<td class="col border"><input id="p4h${i}"></td>`
+            playerHTML4 += `<td class="col border"><input onkeyup="getScores()" id="p4h${i}"></td>`
 
         }
         playerHTML4 += `<td class="col border" id="outScore4"></td>`
         for (let i = 9; i < 18; i++) {
-            playerHTML4 += `<td class="col border"><input id="p4h${i}"></td>`
+            playerHTML4 += `<td class="col border"><input onkeyup="getScores()" id="p4h${i}"></td>`
         }
         playerHTML4 += `<td class="col border" id="inScore4"></td>
     <td class="col border" id="totalScore4"></td>`

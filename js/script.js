@@ -29,12 +29,14 @@ function changeCourse(courseID) {
     getCourseInfo(render)
 }
 function addPlayer(name) {
-    playerCount += 1
     name = document.getElementById('playerName').value
-    players.push(new Player(name))
-    document.getElementById('playerName').value = ''
-    getCourseInfo(render)
-    validatePlayerCount()
+    if (name != "") {
+        playerCount += 1
+        players.push(new Player(name))
+        document.getElementById('playerName').value = ''
+        getCourseInfo(render)
+        validatePlayerCount()
+    }
 }
 function validatePlayerCount() {
     if (playerCount > 4) {
@@ -42,4 +44,10 @@ function validatePlayerCount() {
     }
 }
 addPlayer()
-getScores()
+let nameInput = document.getElementById('playerName')
+nameInput.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        console.log("enter")
+        addPlayer()
+    }
+})
